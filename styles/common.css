@@ -1,5 +1,20 @@
 /* style for all the pages */
+:root{
+	--type--xl: 5em;
+	--type--lg:2.5rem;
+	--tyoe--md: 1.5rem;
+
+	--color-fg: hotpink;
+	--color-bg: black;
+
+	--space-lg:3.5rem;
+	--space--md: 2rem;
+
+}
+
 
 body{
-	color: blueviolet;
+	color: var(--color-fg);
+	background-color: var(--color-bg);
+	padding-block-start: var(--space--md);
 }
