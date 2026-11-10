@@ -3,7 +3,7 @@
 :root {
 	--color-bg: #e9eae6;
 	--color-fg:  #632a50;
-	--color-style: #d93a4a;
+	--color-style: #c92636;
 	--color-muted:rgb(99 42 80/50%);
 	--color-accent:#c4513a;
 
@@ -22,6 +22,8 @@
 	/* lines */
 	--line-thin:0.2rem;
 	--line-double: 0.6rem;
+
+
 
 	--font-head: 'Bitter','Noto Serif SC',sans-serif;
 	--font-body: 'Source Serif 4','Noto Serif SC', monospace;
@@ -47,9 +49,9 @@ html {
 }
 
 nav {
-	padding-block-start: 2.25rem;
-	padding-block-end: 1.4rem;
-	border-block-end: var(--border-double) double var(--color-fg);
+	padding-block-start: var(--space-md);
+	padding-block-end: var(--space-sm);
+	border-block-end: var(--line-double) double;
 
 	ul {
 		display: flex;
@@ -62,8 +64,20 @@ nav {
 
 	}
 
-	section>*+* {
+	section {
+	padding-block: var(--space-md);
+	border-block-start: var(--line-thin) dashed var(--color-fg);
+
+	> * + * {
 		margin-block-start: var(--space-sm);
+	}
+	}
+
+	.section-number{
+		color: var(--color-style);
+		flex-shrink: 0;
+		font-size: var(--type-xl);
+		font-weight: 700;
 	}
 
 	/* link style */
@@ -81,13 +95,13 @@ nav {
 	h1,h2 {
 		font-family: var(--font-head), serif;
 		line-height: 1.2;
-		color: var(--color-muted);
+		color: var(--color-fg);
+		font-weight: 700;
 	}
 
 	/* article title (was h2) */
 	h1 {
 		font-size: 2rem;
-		font-weight: 700;
 	}
 
 	/* section headings (was h3) */
@@ -96,16 +110,8 @@ nav {
 		align-items:flex;
 		column-gap: var(--space-sm);
 
-		font-size: 2rem;
-		font-weight: 500;
+		font-size: var(--type-md);
 		margin-block: var(--size-lg) var(--space-sm);
-	}
-
-	.section-number{
-		color: var(--color-style);
-		flex-shrink: 0;
-		font-size: var(--type-xl);
-		font-weight: 700;
 	}
 
 	/* article header */
@@ -121,8 +127,7 @@ nav {
 	.subtitle {
 		font-size: var(--space-sm);
 		color: var(--color-accent);
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
+		margin-block: 1.5rem;
 	}
 
 	.pull-quote {
@@ -182,14 +187,18 @@ nav {
 		--color-bg: black;
 		--color-fg: #f0dde6;
 		--color-accent: #f07a5c;
-		--color-muted:rgb(99 42 80);
+		--color-muted: rgb(240 221 230 / 50%);
 	}
 }
 
 @media (prefers-contrast: more) {
 	:root {
-		--color-accent: black;
+		--color-accent: #8c2f1d;
 	}
 }
 
-
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--color-accent: #ff9b80;
+	}
+}
