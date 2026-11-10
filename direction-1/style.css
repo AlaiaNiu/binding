@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;800&display=swap");
 
 :root {
-	--color-bg: rgb(253, 255, 236);
-	--color-fg: #2c3e50;
+	--color-bg: #e9eae6;
+	--color-fg:  #632a50;
 	--color-style: #d93a4a;
-	--color-muted: #f15060;
-	--color-accent:#006d73;
+	--color-muted:rgb(99 42 80);
+	--color-accent:#c4513a;
 
 	/* spacing */
 	--space-xs: 0.6rem;
@@ -34,6 +34,10 @@ html {
 	nav ul {
 		display: flex;
 		gap: 3em;
+	}
+
+	nav a{
+		text-decoration: none;
 	}
 
 	body {
