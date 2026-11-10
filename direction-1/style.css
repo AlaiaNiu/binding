@@ -1,25 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,800;1,800&family=Courier+Prime:wght@400;700&family=Source+Serif+4:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap");
 
 :root {
 	--color-bg: #e9eae6;
 	--color-fg:  #632a50;
 	--color-style: #d93a4a;
-	--color-muted:rgb(99 42 80);
+	--color-muted:rgb(99 42 80/50%);
 	--color-accent:#c4513a;
 
 	/* spacing */
 	--space-xs: 0.6rem;
 	--space-sm: 1.2rem;
-	--size-medium: 2rem;
-	--size-large: 4rem;
+	--space-md: 2rem;
+	--size-lg: 4rem;
 
 	/* letter */
 	--type--xl: 5em;
-	--type--lg:2.5rem;
-	--type--md: 1.5rem;
+	--type-lg:2.5rem;
+	--type-md: 1.5rem;
+	--type-sm: 1rem;
 
-	--font-head: 'Libre Franklin', sans-serif;
-	--font-body: 'Courier Prime', monospace;
+	/* lines */
+	--line-thin:0.2rem;
+	--line-double: 0.6rem;
+
+	--font-head: 'Bitter','Noto Serif SC',sans-serif;
+	--font-body: 'Source Serif 4','Noto Serif SC', monospace;
+
+	--page-width:40rem;
+	--page-margin: clamp(1.25rem, 5vw, 2.25rem);
 
 	color: var(--color-fg);
 	background-color: var(--color-bg);
@@ -27,21 +35,31 @@
 
 html {
 	font-family: var(--font-body);
-	font-size: 1rem;
+	font-size: 1.2rem;
 	line-height: 2rem;
 	}
 
-	nav ul {
+	body {
+	max-inline-size: calc(var(--page-width) + 2 * var(--page-margin));
+	margin-inline: auto;
+	padding-inline: var(--page-margin);
+	padding-block-end: 8rem;
+}
+
+nav {
+	padding-block-start: 2.25rem;
+	padding-block-end: 1.4rem;
+	border-block-end: var(--border-double) double var(--color-fg);
+
+	ul {
 		display: flex;
 		gap: 3em;
 	}
 
-	nav a{
+	a {
 		text-decoration: none;
 	}
 
-	body {
-		padding: var(--space-sm);
 	}
 
 	section>*+* {
@@ -74,11 +92,21 @@ html {
 
 	/* section headings (was h3) */
 	h2 {
-		font-size: 3rem;
+		display:flex;
+		align-items:flex;
+		column-gap: var(--space-sm);
+
+		font-size: 2rem;
 		font-weight: 500;
-		margin-block: var(--size-large) var(--space-sm);
+		margin-block: var(--size-lg) var(--space-sm);
 	}
 
+	.section-number{
+		color: var(--color-style);
+		flex-shrink: 0;
+		font-size: var(--type-xl);
+		font-weight: 700;
+	}
 
 	/* article header */
 	.article-header {
@@ -91,22 +119,32 @@ html {
 	}
 
 	.subtitle {
-		font-size: 0.8rem;
+		font-size: var(--space-sm);
 		color: var(--color-accent);
 		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
 	}
 
-
-	/* pull quotes */
 	.pull-quote {
 		color: var(--color-accent);
-		font-size: var(--size-quote-basic);
-		font-weight: 500;
-		line-height: 1.2;
-		margin-block: var(--size-medium);
-		margin-inline: 0;
 		font-family: var(--font-head);
+		text-align: center;
+		border: var(--line-double) double var(--color-accent);
+		padding-block: var(--space-md);
+		padding-inline: var(--space-sm);
+		margin-block: var(--space-lg);
+		rotate: -2deg;
+
+		max-inline-size: calc(var(--measure) * 0.8);
+		margin-inline: auto;
+
+	p {
+		font-size: var(--size-quote-basic);
+		font-weight: 600;
+		line-height: 2;
+		text-wrap: balance;
+	}
+
 	}
 
 	/* first quote */
@@ -121,21 +159,6 @@ html {
 		font-weight: 400;
 	}
 
-	/* without chronology */
-	.pq-22 {
-		margin-block: var(--size-medium);
-		color: rgb(97 94 91 / 50%);
-		font-family: var(--font-body);
-		font-size: 1.5rem;
-		font-weight: 700;
-		text-decoration: line-through;
-	}
-
-	/* over causes */
-	.pq-24 {
-		font-size: calc(var(--size-quote-basic) * 2);
-	}
-
 	/* third quote */
 	.quote-3 {
 		color: var(--color-accent);
@@ -144,18 +167,11 @@ html {
 		line-height: 1.2;
 	}
 
-	/* COMPLEX */
-	.pq-32-1 {
-		font-size: calc(var(--size-quote-basic) * 2);
-		text-transform: uppercase;
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
-	}
 
 	/* footer */
 	footer {
 		margin-block-start: var(--space-sm);
-		margin-block-end: var(--size-large);
+		margin-block-end: var(--size-lg);
 		padding-block-start: var(--space-sm);
 		border-block-start: 1px solid var(--color-accent);
 	}
@@ -163,9 +179,10 @@ html {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-fg: var(--color-muted);
 		--color-bg: black;
-		--color-accent: pink;
+		--color-fg: #f0dde6;
+		--color-accent: #f07a5c;
+		--color-muted:rgb(99 42 80);
 	}
 }
 
@@ -174,3 +191,5 @@ html {
 		--color-accent: black;
 	}
 }
+
+
