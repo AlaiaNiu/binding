@@ -1,14 +1,18 @@
 /* style for all the pages */
 :root{
+	--color-fg: #23211e;
+	--color-bg: #f6f3ec;
+	--color-muted:#6f6a62;
+	--color-accent:#9a3b2e;
+
 	--type--xl: 5em;
 	--type--lg:2.5rem;
 	--tyoe--md: 1.5rem;
 
-	--color-fg: hotpink;
-	--color-bg: black;
 
-	--space-lg:3.5rem;
-	--space--md: 2rem;
+	--space-sm: 0.75rem;
+	--space--md: 1.5rem;
+	--space-lg:3rem;
 
 }
 

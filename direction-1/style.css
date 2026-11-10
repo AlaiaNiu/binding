@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;800&display=swap");
+
+:root {
+	--color-bg: rgb(253, 255, 236);
+	--color-fg: #2c3e50;
+	--color-style: #d93a4a;
+	--color-muted: #f15060;
+	--color-accent:#006d73;
+
+	/* spacing */
+	--space-xs: 0.6rem;
+	--space-sm: 1.2rem;
+	--size-medium: 2rem;
+	--size-large: 4rem;
+
+	/* letter */
+	--type--xl: 5em;
+	--type--lg:2.5rem;
+	--type--md: 1.5rem;
+
+	--font-head: 'Libre Franklin', sans-serif;
+	--font-body: 'Courier Prime', monospace;
+
+	color: var(--color-fg);
+	background-color: var(--color-bg);
+}
+
+html {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 2rem;
+	}
+
+	nav ul {
+		display: flex;
+		gap: 3em;
+	}
+
+	body {
+		padding: var(--space-sm);
+	}
+
+	section>*+* {
+		margin-block-start: var(--space-sm);
+	}
+
+	/* link style */
+	a {
+		color: inherit;
+		text-decoration: underline;
+	}
+
+	em {
+		font-style: italic;
+		color: var(--color-accent);
+	}
+
+	/* headings */
+	h1,h2 {
+		font-family: var(--font-head), serif;
+		line-height: 1.2;
+		color: var(--color-muted);
+	}
+
+	/* article title (was h2) */
+	h1 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	/* section headings (was h3) */
+	h2 {
+		font-size: 3rem;
+		font-weight: 500;
+		margin-block: var(--size-large) var(--space-sm);
+	}
+
+
+	/* article header */
+	.article-header {
+		text-align: center;
+		margin-block: 3rem;
+	}
+
+	.article-title {
+		color: var(--color-fg);
+	}
+
+	.subtitle {
+		font-size: 0.8rem;
+		color: var(--color-accent);
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+
+	/* pull quotes */
+	.pull-quote {
+		color: var(--color-accent);
+		font-size: var(--size-quote-basic);
+		font-weight: 500;
+		line-height: 1.2;
+		margin-block: var(--size-medium);
+		margin-inline: 0;
+		font-family: var(--font-head);
+	}
+
+	/* first quote */
+	.quote-1 {
+		color: var(--color-accent);
+		margin-block: 3rem;
+	}
+
+	/* second quote */
+	.quote-2 {
+		font-family: var(--font-head);
+		font-weight: 400;
+	}
+
+	/* without chronology */
+	.pq-22 {
+		margin-block: var(--size-medium);
+		color: rgb(97 94 91 / 50%);
+		font-family: var(--font-body);
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-decoration: line-through;
+	}
+
+	/* over causes */
+	.pq-24 {
+		font-size: calc(var(--size-quote-basic) * 2);
+	}
+
+	/* third quote */
+	.quote-3 {
+		color: var(--color-accent);
+		font-size: var(--size-quote-basic);
+		font-weight: 400;
+		line-height: 1.2;
+	}
+
+	/* COMPLEX */
+	.pq-32-1 {
+		font-size: calc(var(--size-quote-basic) * 2);
+		text-transform: uppercase;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	/* footer */
+	footer {
+		margin-block-start: var(--space-sm);
+		margin-block-end: var(--size-large);
+		padding-block-start: var(--space-sm);
+		border-block-start: 1px solid var(--color-accent);
+	}
+
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-fg: var(--color-muted);
+		--color-bg: black;
+		--color-accent: pink;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-accent: black;
+	}
+}
