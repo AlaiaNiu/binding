@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,800;1,800&family=Courier+Prime:wght@400;700&family=Source+Serif+4:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,800;1,400;1,600;1,800&family=Courier+Prime:wght@400;700&family=Source+Serif+4:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap");
 
-:root {
+:root{
+
 	--color-bg: #e9eae6;
 	--color-fg:  #632a50;
 	--color-style: #c92636;
@@ -10,35 +11,37 @@
 	/* spacing */
 	--space-xs: 0.6rem;
 	--space-sm: 1.2rem;
-	--space-md: 2rem;
-	--size-lg: 4rem;
+	--space-md: 2.4rem;
+	--space-lg: 4.8rem;
 
-	/* letter */
-	--type--xl: 5em;
-	--type-lg:2.5rem;
-	--type-md: 1.5rem;
+	/* type */
 	--type-sm: 1rem;
+	--type-md: 1.5rem;
+	--type-lg:2.5rem;
 
 	/* lines */
 	--line-thin:0.2rem;
-	--line-double: 0.6rem;
+	--line-thick: 0.6rem;
 
+	/* fonts */
+	--font-head: "Bitter", "Noto Serif SC", serif;
+	--font-body: "Source Serif 4", "Noto Serif SC", serif;
+	--font-mono: "Courier Prime", monospace;
 
-
-	--font-head: 'Bitter','Noto Serif SC',sans-serif;
-	--font-body: 'Source Serif 4','Noto Serif SC', monospace;
-
+	/* layout */
 	--page-width:40rem;
-	--page-margin: clamp(1.25rem, 5vw, 2.25rem);
+	--page-margin: var(--space-sm);
 
 	color: var(--color-fg);
 	background-color: var(--color-bg);
+
 }
 
 html {
 	font-family: var(--font-body);
-	font-size: 1.2rem;
-	line-height: 2rem;
+	/* best size on phone */
+	font-size: 1.1rem;
+	line-height: 1.75;
 	}
 
 	body {
@@ -51,7 +54,7 @@ html {
 nav {
 	padding-block-start: var(--space-md);
 	padding-block-end: var(--space-sm);
-	border-block-end: var(--line-double) double;
+	border-block-end: var(--line-thick) double;
 
 	ul {
 		display: flex;
@@ -97,11 +100,13 @@ nav {
 		line-height: 1.2;
 		color: var(--color-fg);
 		font-weight: 700;
+		text-wrap: balance;
 	}
 
 	/* article title (was h2) */
 	h1 {
-		font-size: 2rem;
+		font-size: var(--type-lg);
+		line-height: 1.2;
 	}
 
 	/* section headings (was h3) */
@@ -111,7 +116,7 @@ nav {
 		column-gap: var(--space-sm);
 
 		font-size: var(--type-md);
-		margin-block: var(--size-lg) var(--space-sm);
+		margin-block-end: var(--space-sm);
 	}
 
 	/* article header */
@@ -125,16 +130,27 @@ nav {
 	}
 
 	.subtitle {
-		font-size: var(--space-sm);
+		font-family: var(--font-head);
+		font-style: italic;
+		line-height: 1.4;
+		font-size: var(--type-sm);
 		color: var(--color-accent);
 		margin-block: 1.5rem;
+	}
+
+	.byline {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		line-height: 1.5;
+		text-transform: uppercase;
+		margin-block-start: var(--space-sm);
 	}
 
 	.pull-quote {
 		color: var(--color-accent);
 		font-family: var(--font-head);
 		text-align: center;
-		border: var(--line-double) double var(--color-accent);
+		border: var(--line-thick) double var(--color-accent);
 		padding-block: var(--space-md);
 		padding-inline: var(--space-sm);
 		margin-block: var(--space-lg);
@@ -142,14 +158,13 @@ nav {
 
 		max-inline-size: calc(var(--measure) * 0.8);
 		margin-inline: auto;
-
-	p {
-		font-size: var(--size-quote-basic);
-		font-weight: 600;
-		line-height: 2;
-		text-wrap: balance;
 	}
 
+	p {
+		font-size: var(--type-sm);
+		font-weight: 600;
+		line-height: 2;
+		text-wrap: pretty;
 	}
 
 	/* first quote */
@@ -176,7 +191,7 @@ nav {
 	/* footer */
 	footer {
 		margin-block-start: var(--space-sm);
-		margin-block-end: var(--size-lg);
+		margin-block-end: var(--space-lg);
 		padding-block-start: var(--space-sm);
 		border-block-start: 1px solid var(--color-accent);
 	}
