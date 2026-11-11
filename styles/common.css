@@ -1,24 +1,44 @@
-/* style for all the pages */
-:root{
-	--color-fg: #23211e;
-	--color-bg: #f6f3ec;
-	--color-muted:#6f6a62;
-	--color-accent:#9a3b2e;
+:root {
 
-	--type--xl: 5em;
-	--type--lg:2.5rem;
-	--tyoe--md: 1.5rem;
+	/* spacing */
+	--space-xs: 0.6rem;
+	--space-sm: 1.2rem;
+	--space-md: 2.4rem;
+	--space-lg: 4.8rem;
 
+	/* type */
+	--type-sm: 1rem;
+	--type-md: 1.5rem;
+	--type-lg:2.5rem;
 
-	--space-sm: 0.75rem;
-	--space--md: 1.5rem;
-	--space-lg:3rem;
+	/* lines */
+	--line-thin:0.2rem;
+	--line-thick: 0.6rem;
 
-}
+	/* fonts */
+	--font-head: "Bitter", "Noto Serif SC", serif;
+	--font-body: "Source Serif 4", "Noto Serif SC", serif;
+	--font-mono: "Courier Prime", monospace;
 
+	/* layout */
+	--page-width:40rem;
+	--page-margin: var(--space-sm);
 
-body{
 	color: var(--color-fg);
 	background-color: var(--color-bg);
-	padding-block-start: var(--space--md);
 }
+
+nav {
+	padding-block-start: var(--space-md);
+	padding-block-end: var(--space-sm);
+
+	ul {
+		display: flex;
+		gap: 3em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	}
