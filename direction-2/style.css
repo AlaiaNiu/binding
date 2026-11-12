@@ -45,16 +45,21 @@ blockquote {
 	margin: 2.5rem 0;
 	padding: 1.25rem;
 	background-color: #f3cedd;
-}
 
-blockquote p {
+	p {
 	font-size: 2rem;
 	font-style: italic;
 	line-height: 1.2;
 	margin: 0;
+	}
 }
+
 
 a {
 	color: inherit;
 	text-underline-offset: 0.2em;
+}
+
+em{
+
 }

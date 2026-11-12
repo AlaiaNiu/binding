@@ -1,18 +1,20 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Inter+Tight:wght@400;500&family=Space+Mono&display=swap");
 
 :root {
-  --color-bg: #f5f0e8;
-  --color-accent: #b5452a;
-  --font-heading: "Playfair Display", serif;
-  --space-lg: 3rem;
+	--color-bg: #ecebe4;
+	--color-fg: #2e7a3e;
+	--color-accent: #ec8fc4;
+
+	--font-head: "Archivo Narrow", sans-serif;
+	--font-body: "Inter Tight", sans-serif;
+
+	--type-lg: 5rem;
 }
 
+
 body {
-	margin: 0;
-	padding: 1.25rem;
-	background-color: #a50750;
-	color: #fff4f1;
+	background-color: var(--color-bg);
+	color: var(--color-fg);
 	font-family: 'Newsreader', serif;
 }
 
@@ -25,11 +27,9 @@ h1 {
 }
 
 h2 {
-	color: #e3f5ac;
-	font-size: 3rem;
-	font-weight: 400;
-	line-height: 1.15;
-	margin-block: 3.5rem 1.5rem;
+	color: var(--color-accent);
+	font-size: var(--type-md);
+	margin-block: var(--space-md);
 }
 
 p {
@@ -50,10 +50,14 @@ p {
 }
 
 blockquote {
-	margin: 2.5rem 0;
 	padding-block: 1.5rem;
-	border-block: 1px solid currentColor;
-	color: #e3f5ac;
-	font-size: 2rem;
+	color: var(--color-accent);
+
+
+	p {
+	font-size: inherit;
+	line-height: 1;
+	font-size: 3rem;
+	}
 }
 

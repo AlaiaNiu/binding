@@ -34,3 +34,14 @@ Each article challenges certain notions that are often taken for granted: the us
 I drew inspiration from the Women Workshop website (https://seeredwomensworkshop.com/) and plan to combine bold sans-serif headings with serif body text and expressive italicized quotations. Drawing inspiration from the direct style of protest posters and independent publications, I will explore strong color contrasts and variations in type size to give this collection of articles a clear and powerful voice. Throughout these three articles, these design choices will follow a consistent hierarchy. The goal is to make the arguments visually engaging while ensuring a clear and comfortable reading experience.
 
 
+## Direction 3: Zine Book
+
+### Concept
+
+Direction 3 takes the form of a zine. The article argues that design history has been organized around a single linear timeline and a canon that reflects a Western belief in progress, and it calls for more relational and pluralistic ways of seeing the past. Zines have long existed outside that canon: they are self-published, made in small runs, and often used by communities whose histories mainstream publishing ignored. Their production is imperfect by nature: misregistered colors, uneven ink, no two copies alike. That imperfection rejects the logic of standardized progress.
+
+### Design
+
+The color scheme was derived from risograph-printed zines, where green and fluorescent pink are among the most common ink colors available to small presses. Because each color is printed in a separate pass, the layers rarely align perfectly, and no two copies come out exactly the same. These traces of misregistration and uneven ink mark the zine as something made by hand, in small numbers.
+
+The typography follows the cut-and-paste layouts of self-published zines: condensed headlines are broken and stacked, type sizes shift abruptly. Rather than guiding the reader along a single path, the page invites them to move through it in fragments.

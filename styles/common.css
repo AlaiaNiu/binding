@@ -28,6 +28,7 @@ body {
 	background: var(--color-bg);
 	color: var(--color-fg);
 
+	margin-inline: auto;
 	padding-inline: var(--space-md);
 }
 
