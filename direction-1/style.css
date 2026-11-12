@@ -44,7 +44,6 @@ html {
 	}
 
 	body {
-	max-inline-size: calc(var(--page-width) + 2 * var(--page-margin));
 	margin-inline: auto;
 	padding-inline: var(--page-margin);
 	padding-block-end: 8rem;
@@ -149,14 +148,14 @@ nav {
 		color: var(--color-accent);
 		font-family: var(--font-head);
 		text-align: center;
+
 		border: var(--line-thick) double var(--color-accent);
 		padding-block: var(--space-md);
 		padding-inline: var(--space-sm);
 		margin-block: var(--space-lg);
+		margin-inline: auto;
 		rotate: -2deg;
 
-		max-inline-size: calc(var(--measure) * 0.8);
-		margin-inline: auto;
 	}
 
 	p {
