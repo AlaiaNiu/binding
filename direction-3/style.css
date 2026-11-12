@@ -8,56 +8,117 @@
 	--font-head: "Archivo Narrow", sans-serif;
 	--font-body: "Inter Tight", sans-serif;
 
-	--type-lg: 5rem;
-}
+	/* type */
+	--type-sm: 1rem;
+	--type-md: 1.5rem;
+	--type-lg:2.5rem;
 
+}
 
 body {
 	background-color: var(--color-bg);
 	color: var(--color-fg);
-	font-family: 'Newsreader', serif;
+	font-family: var(--font-body);
 }
+
 
 h1 {
 	font-size: 3.5rem;
 	font-weight: 600;
 	line-height: 1;
-	letter-spacing: -0.04em;
-	margin-block: 2rem;
+	margin-block: var(--space-md);
+	font-family: var(--font-head);
 }
 
 h2 {
 	color: var(--color-accent);
-	font-size: var(--type-md);
+	font-size: var(--type-lg);
 	margin-block: var(--space-md);
 }
 
 p {
-	font-size: 1.25rem;
-	line-height: 1.55;
-	margin-block: 0 1.5rem;
+	font-size: var(--type-sm);
+	line-height: 1.5;
 }
 
-.subtitle {
-	font-size: 1.6rem;
-	font-style: italic;
-	line-height: 1.25;
+.tag {
+	font-size: calc(var(--space-sm) * 0.75);
+	background: var(--color-accent);
+	color: var(--color-fg);
+	padding: 0.1em 0.4em;
 }
 
-.byline {
-	font-size: 1rem;
-	margin-block-end: 3rem;
-}
+.article-header {
+	position: relative;
+	background: var(--color-fg);
+	color: var(--color-bg);
+	padding: var(--space-sm);
+	padding-block-start: var(--space-lg);
+	margin-block-end: var(--space-md);
 
-blockquote {
-	padding-block: 1.5rem;
-	color: var(--color-accent);
-
-
-	p {
-	font-size: inherit;
-	line-height: 1;
-	font-size: 3rem;
+	.tag {
+		position: absolute;
+		top: var(--space-sm);
+		right: var(--space-sm);
 	}
 }
 
+.article-title {
+	color: var(--color-bg);
+	text-transform: uppercase;
+	overflow-wrap: anywhere;
+	font-size: var(--type-lg);
+	margin-block-start: 0;
+}
+
+.subtitle {
+	font-size: var(--type-sm);
+	line-height: 1.25;
+	color: #f7c6e0;
+}
+
+.byline {
+	font-size: calc(var(--type-sm) * 0.75);
+	margin: 0;
+}
+
+.section-number {
+	font-size: calc(var(--type-sm) * 0.75);
+	font-weight: 400;
+	vertical-align: top;
+	background: var(--color-fg);
+	color: var(--color-bg);
+	padding: 0.1em 0.4em;
+}
+
+blockquote {
+	padding: var(--space-sm) var(--space-sm);
+	margin-block: var(--space-md);
+	color: #f7c6e0;
+	background: var(--color-fg);
+
+	p {
+	font-size: var(--type-md);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: #14261a;
+		--color-fg: #ecebe4;
+		--color-accent: #ec8fc4;
+		--color-muted: rgb(236 235 228 / 50%);
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-accent: #c2186b;
+	}
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--color-accent: var(--color-accent);
+	}
+}

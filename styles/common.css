@@ -51,7 +51,7 @@ nav {
 h1 {
 	font-size: var(--type-lg);
 	line-height: 1.2;
-	margin-block: var(--space-md);
+	margin-block: var(--space-sm);
 }
 
 	/* section headings */
@@ -62,4 +62,5 @@ h2 {
 
 p {
 	margin-block-end: var(--space-sm);
+	line-height: 1.6;
 }

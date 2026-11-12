@@ -60,6 +60,23 @@ a {
 	text-underline-offset: 0.2em;
 }
 
-em{
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: #141a33;
+		--color-fg: #e7efd7;
+		--color-accent: #e7a3c3;
+		--color-muted: rgb(231 239 215 / 50%);
+	}
+}
 
+@media (prefers-contrast: more) {
+	:root {
+		--color-accent: #6b1d44;
+	}
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--color-accent: #f6c6dc;
+	}
 }
