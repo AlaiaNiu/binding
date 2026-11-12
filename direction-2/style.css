@@ -1,63 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
 
-body {
-	margin: 0;
-	padding: 1.25rem;
-	background-color: #e2f0d3;
-	color: #29458a;
-	font-family: 'Newsreader', serif;
+:root {
+	--color-bg: #fff54a;
+	--color-fg: #20231c;
+
+
+	--color-accent: #174cb5;
+	--color-quote-bg: #a7cf6a;
+
+
+	--font-head: "Anton", sans-serif;
+	--font-body: "Source Serif 4", serif;
+
+
+	--type-head: 3rem;
+	--weight-head: 400;
+	--leading-tight: 1.2;
+	--leading-body: 1.6;
+	--tracking-tight: -0.02em;
+	--underline-offset: 0.2em;
+}
+
+
+h1,h2 {
+	font-family: var(--font-head);
+	font-weight: var(--weight-head);
+	color: var(--color-accent);
 }
 
 h1 {
-	font-size: 3.5rem;
-	font-weight: 400;
-	line-height: 1.05;
-	letter-spacing: -0.04em;
-	margin-block: 2rem;
+	font-size: var(--type-head);
+	letter-spacing: var(--tracking-tight);
 }
 
 h2 {
-	color: #963b68;
-	font-size: 2rem;
-	font-weight: 400;
-	line-height: 1.15;
-	margin-block: 3.5rem 1.5rem;
+	line-height: var(--leading-tight);
 }
 
+.section-number {
+	display: block;
+	font-size: var(--type-sm);
+	margin-block-end: var(--space-xs);
+	color: var(--color-fg);
+}
+
+/* common */
 p {
-	font-size: 1.25rem;
-	line-height: 1.55;
-	margin-block: 0 1.5rem;
+	font-size: var(--type-sm);
+	line-height: var(--leading-body);
 }
 
 .subtitle {
-	font-size: 1.6rem;
-	font-style: italic;
-	line-height: 1.25;
+	background: var(--color-accent);
+	color: var(--color-bg);
+
+	padding: var(--space-sm);
+	margin-block: var(--space-md);
+
+	font-size: var(--type-md);
+	line-height: var(--leading-tight);
 }
 
 .byline {
-	font-size: 1rem;
-	margin-block-end: 3rem;
+	margin-block-end: var(--space-md);
 }
+
 
 blockquote {
-	margin: 2.5rem 0;
-	padding: 1.25rem;
-	background-color: #f3cedd;
+	background: var(--color-quote-bg);
+	color: var(--color-accent);
 
-	p {
-	font-size: 2rem;
-	font-style: italic;
-	line-height: 1.2;
-	margin: 0;
-	}
+	margin-block: var(--space-md);
+	margin-inline: 0;
+	padding: var(--space-sm);
+
+	border-block-start:
+		var(--line-thin) solid var(--color-accent);
 }
 
+blockquote p {
+	font-size: var(--type-md);
+	font-style: italic;
+	line-height: var(--leading-tight);
+	margin: 0;
+}
 
 a {
 	color: inherit;
-	text-underline-offset: 0.2em;
+	text-underline-offset: var(--underline-offset);
 }
 
 @media (prefers-color-scheme: dark) {
