@@ -103,13 +103,13 @@ nav {
 		text-wrap: balance;
 	}
 
-	/* article title (was h2) */
+	/* article title */
 	h1 {
 		font-size: var(--type-lg);
 		line-height: 1.2;
 	}
 
-	/* section headings (was h3) */
+	/* section headings */
 	h2 {
 		display:flex;
 		align-items:flex;

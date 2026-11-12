@@ -1,4 +1,12 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --color-bg: #f5f0e8;
+  --color-accent: #b5452a;
+  --font-heading: "Playfair Display", serif;
+  --space-lg: 3rem;
+}
 
 body {
 	margin: 0;
@@ -48,5 +56,4 @@ blockquote {
 	color: #e3f5ac;
 	font-size: 2rem;
 }
-
 
