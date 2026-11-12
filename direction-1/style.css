@@ -29,7 +29,6 @@
 	--font-mono: "Courier Prime", monospace;
 
 	/* layout */
-	--page-width:40rem;
 	--page-margin: var(--space-sm);
 
 	color: var(--color-fg);
