@@ -2,12 +2,10 @@
 
 :root{
 
-	--color-bg: #ecebe4;
-	--color-fg:  #632a50;
-	--color-style: #c92636;
-	--color-muted:rgb(99 42 80/50%);
-	--color-accent:#c4513a;
-
+	--color-bg: #fff54a;
+	--color-fg: #20231c;
+	--color-accent: #174cb5;
+	--color-quote-bg: #a7cf6a;
 }
 
 
