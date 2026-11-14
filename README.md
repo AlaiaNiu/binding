@@ -25,6 +25,8 @@ I plan to use the ration book as a shared framework for the collection, with eac
 
 The color scheme for the first article was derived from the 1966 nationwide grain ration coupons used in China—the most common and widely circulated ration tickets of the time. Once used, these coupons were stamped or collected, signifying that they were no longer valid.
 
+Rather than sampling the faded colors of a single coupon, the palette borrows the system behind them. Ration coupons were printed in one ink on tinted paper, and each combination signaled a different good, value or region. Here, saturated yellow stands in for the paper and blue for the ink. A third color is reserved for the official seal, which was stamped by hand on top of the printed coupon, often off-register, and which marked the coupon as valid or used.
+
 
 ## Direction 2: The Critical Reader
 

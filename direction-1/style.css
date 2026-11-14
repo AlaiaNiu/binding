@@ -2,11 +2,12 @@
 
 :root{
 
-	--color-bg: #e9eae6;
+	--color-bg: #ecebe4;
 	--color-fg:  #632a50;
 	--color-style: #c92636;
 	--color-muted:rgb(99 42 80/50%);
 	--color-accent:#c4513a;
+
 
 	/* spacing */
 	--space-xs: 0.6rem;
@@ -148,6 +149,7 @@ nav {
 		color: var(--color-accent);
 		font-family: var(--font-head);
 		text-align: center;
+		font-size: var(--type-lg);
 
 		border: var(--line-thick) double var(--color-accent);
 		padding-block: var(--space-md);
