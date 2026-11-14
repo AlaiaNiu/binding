@@ -1,0 +1,32 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Inter+Tight:wght@400;500&family=Space+Mono&display=swap");
+
+:root {
+	--color-bg: #ecebe4;
+	--color-fg: #2e7a3e;
+	--color-accent: #ec8fc4;
+
+	--font-head: "Archivo Narrow", sans-serif;
+	--font-body: "Inter Tight", sans-serif;
+
+	/* type */
+	--type-sm: 1rem;
+	--type-md: 1.5rem;
+	--type-lg:2.5rem;
+
+}
+
+h1 {
+	font-size: 3.5rem;
+	font-weight: 600;
+	line-height: 1;
+	margin-block: var(--space-md);
+	font-family: var(--font-head);
+}
+
+h2 {
+	color: var(--color-accent);
+	font-size: var(--type-lg);
+	margin-block: var(--space-md);
+}
