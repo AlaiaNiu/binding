@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Inter+Tight:wght@400;500&family=Space+Mono&display=swap");
+
 :root {
-	--color-bg: #fff;
-	--color-fg: #111;
+	--color-bg: #ecebe4;
+	--color-fg: #2e7a3e;
+	--color-accent: #ec8fc4;
+	--color-accent-light: #f7c6e0;
+	--color-style: #c92636;
+	--color-muted: rgb(99 42 80 / 50%);
 
 	/* spacing */
 	--space-xs: 0.6rem;
@@ -9,35 +15,46 @@
 	--space-lg: 4.8rem;
 
 	/* type */
+	--type-xs: 0.85rem;
 	--type-sm: 1rem;
 	--type-md: 1.5rem;
-	--type-lg:2.5rem;
+	--type-lg: 2.5rem;
+	--type-xl: 3.5rem;
 
 	/* lines */
-	--line-thin:0.2rem;
+	--line-thin: 0.2rem;
 	--line-thick: 0.6rem;
+
+	/* fonts */
+	--font-head: "Archivo Narrow", sans-serif;
+	--font-body: "Inter Tight", sans-serif;
+	--font-mono: "Space Mono", monospace;
+
+	/* layout */
+	--page-margin: var(--space-sm);
+
+	color: var(--color-fg);
+	background-color: var(--color-bg);
 }
 
 html {
 	font-family: var(--font-body);
-	font-size: 1rem;
+	font-size: var(--type-sm);
 	line-height: 1.75;
-	}
-
-body {
-	background: var(--color-bg);
-	color: var(--color-fg);
-
-	margin-inline: auto;
-	padding-inline: var(--space-md);
 }
 
+body {
+	padding-inline: var(--page-margin);
+	padding-block-end: 8rem;
+}
 
+/* site nav */
 nav {
 	padding-block-start: var(--space-md);
 	padding-block-end: var(--space-sm);
+	border-block-end: var(--line-thick) double;
 
-	ul {
+	:is(ol, ul) {
 		display: flex;
 		gap: var(--space-md);
 	}
@@ -45,22 +62,139 @@ nav {
 	a {
 		text-decoration: none;
 	}
+}
 
-	}
+/* links */
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+:focus-visible {
+	outline: var(--line-thin) solid var(--color-style);
+	outline-offset: 0.2em;
+}
+
+/* headings */
+h1, h2 {
+	font-family: var(--font-head);
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--color-bg);
+	text-wrap: balance;
+}
 
 h1 {
 	font-size: var(--type-lg);
-	line-height: 1.2;
+}
+
+h2 {
+	display: flex;
+	column-gap: var(--space-sm);
+	font-size: var(--type-md);
+	margin-block-end: var(--space-sm);
+}
+
+.article-title {
+	color: var(--color-bg);
+	text-transform: uppercase;
+	overflow-wrap: anywhere;
+	font-size: var(--type-lg);
+}
+
+.subtitle {
+	font-style: italic;
+	font-size: var(--type-sm);
+	line-height: 1.4;
 	margin-block: var(--space-sm);
 }
 
-	/* section headings */
-h2 {
-	font-size: var(--type-md);
-	margin-block: var(--space-md);
+.article-header {
+	position: relative;
+	background: var(--color-fg);
+	color: var(--color-bg);
+	padding: var(--space-sm);
+	padding-block-start: var(--space-md);
+	margin-block-end: var(--space-md);
+}
+
+.byline {
+	font-family: var(--font-mono);
+	font-size: var(--type-xs);
+	line-height: 1.5;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+/* small labels */
+.tag.section-number {
+	font-family: var(--font-mono);
+	font-size: var(--type-xs);
+	font-weight: 400;
+	padding: 0.1em 0.4em;
+}
+
+
+/* body */
+section {
+	padding-block: var(--space-md);
+	border-block-start: var(--line-thin) dashed var(--color-fg);
+
+	> * + * {
+		margin-block-start: var(--space-sm);
+	}
 }
 
 p {
-	margin-block-end: var(--space-sm);
-	line-height: 1.6;
+	font-weight: 400;
+	text-wrap: pretty;
+}
+
+blockquote {
+	margin-block: var(--space-md);
+	padding: var(--space-sm);
+}
+
+.pull-quote {
+	margin: var(--space-lg) var(--space-sm);
+	padding: var(--space-md) var(--space-lg);
+	border: var(--line-thick) double var(--color-accent);
+	rotate: -2deg;
+	text-align: center;
+
+	p {
+		font-family: var(--font-head);
+		font-size: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+		line-height: 1.25;
+		text-wrap: balance;
+	}
+}
+
+/* footer */
+footer {
+	margin-block-start: var(--space-sm);
+	margin-block-end: var(--space-lg);
+	padding-block-start: var(--space-sm);
+	border-block-start: var(--line-thin);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: black;
+		--color-fg: #f0dde6;
+		--color-accent: #f07a5c;
+		--color-muted: rgb(240 221 230 / 50%);
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-accent: #8c2f1d;
+	}
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--color-accent: #ff9b80;
+	}
 }

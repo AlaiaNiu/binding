@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,800;1,400;1,600;1,800&family=Courier+Prime:wght@400;700&family=Source+Serif+4:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap");
+
 
 :root{
-
 	--color-bg: #fff54a;
-	--color-fg: #20231c;
+	--color-fg: #103091;
 	--color-accent: #174cb5;
 	--color-quote-bg: #a7cf6a;
 }
