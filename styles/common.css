@@ -2,7 +2,7 @@
 
 :root {
 	--color-bg: #ecebe4;
-	--color-fg: #2e7a3e;
+	--color-fg: #1c1e1c;
 	--color-accent: #ec8fc4;
 	--color-accent-light: #f7c6e0;
 	--color-style: #c92636;
@@ -41,6 +41,8 @@
 
 	color: var(--color-fg);
 	background-color: var(--color-bg);
+
+	--page-margin: clamp(1.5rem, 4vw, 4rem);
 }
 
 html {
@@ -77,13 +79,16 @@ nav {
 
 /* links */
 a {
-
 	text-decoration: underline;
 }
 
 :focus-visible {
 	outline: var(--line-thin) solid var(--color-style);
 	outline-offset: 0.2em;
+}
+
+header {
+  padding: calc(var(--page-margin) * 0.75) var(--page-margin) 0;
 }
 
 /* headings */
@@ -121,7 +126,7 @@ h2 {
 	color: var(--color-bg);
 	padding: var(--space-sm);
 	padding-block-start: var(--space-md);
-	margin-block-end: var(--space-lg);
+	margin-block-end: var(--space-md);
 	padding-inline: max(var(--page-margin), (100% - var(--page-width)) / 2);
 }
 
@@ -136,7 +141,6 @@ h2 {
 /* body */
 section {
 	padding-block: var(--space-md);
-	border-block-start: var(--line-thin) dashed var(--color-fg);
 
 	> * + * {
 		margin-block-start: var(--space-sm);
@@ -165,6 +169,7 @@ blockquote {
 		font-size: var(--type-md);
 		line-height: var(--lineheight-sm);
 		text-wrap: balance;
+		margin-inline: auto;
 	}
 }
 
