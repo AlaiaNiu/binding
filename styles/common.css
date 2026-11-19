@@ -200,14 +200,6 @@ em {
 	border-style: solid;
 }
 
-mark {
-	background: color-mix(in oklab, var(--color-fg) 30%, transparent);
-	color: inherit;
-	padding: 0.05em 0.25em;
-	margin-inline: -0.15em;
-	box-decoration-break: clone;
-	-webkit-box-decoration-break: clone;
-}
 
 blockquote {
 	margin-block: var(--space-md);
@@ -216,8 +208,8 @@ blockquote {
 
 .pull-quote {
 	max-inline-size: calc(var(--page-width) * 0.75);
-	margin: var(--space-lg) auto;
-	padding: var(--space-md) var(--space-lg);
+	margin: var(--space-md) auto;
+	padding: var(--space-sm) var(--space-md);
 	border: var(--line-thick) double var(--color-accent);
 	rotate: -2deg;
 	text-align: center;

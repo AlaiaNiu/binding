@@ -5,12 +5,12 @@ header{
 
 h1 {
 	font-size: var(--type-xl);
-	color: #070707;
 }
 
 nav{
 	font-size: var(--type-sm);
 }
+
 .subtitle{
 	color: var(--color-accent);
 }
@@ -26,9 +26,9 @@ nav{
 	gap: 1rem;
 }
 
-.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #FAF7E4; --rotate: -2deg; }
+.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #F6EED4; --rotate: -2deg; }
 .card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; }
-.card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #FAF7E4; --rotate: -1deg;}
+.card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #F6EED4; --rotate: -1deg;}
 
 /* motion */
 .card{
