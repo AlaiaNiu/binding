@@ -1,5 +1,6 @@
 header{
 	font-family: var(--font-head);
+	padding-inline: 0;
 }
 
 h1 {
@@ -7,41 +8,56 @@ h1 {
 	color: #070707;
 }
 
-/* add animation for this one rolling */
-.note{
-	background-color: #83b6e9;
-	padding-left: 1rem;
+nav{
+	font-size: var(--type-sm);
+}
+.subtitle{
+	color: var(--color-accent);
 }
 
+/* homepage nav style*/
 .cards {
 	padding: var(--space-md);
-	background-color:#54659C;
+	background-color: #54659C;
 
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(6, minmax(0, 1fr));
 	align-items: start;
 	gap: 1rem;
 }
 
-.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #8DB4CC; }
-.card-2 { grid-column: 2 / 4; grid-row: 3 / 6; background-color: #deaa73; }
-.card-3 { grid-column: 4 / 7; grid-row: 5 / 7; background-color: #FAF7E4; }
+.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #FAF7E4; --rotate: -2deg; }
+.card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; }
+.card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #FAF7E4; --rotate: -1deg;}
 
+/* motion */
 .card{
-	 width: clamp(12rem, 22vw, 18rem);
 	transition: all 0.4s ease;
 	transform: rotate(var(--rotate));
 	aspect-ratio: 2 / 3;
-
+	padding: var(--space-xs);
 }
 
 .card a {
-	font-size: var(--type-md);
+	font-size: var(--type-sm);
 	display: block;
 	height: 100%;
-	padding: var(--type-md);
 	color:#351a1a;
-	text-decoration: none;
+	border: var(--line-thin) solid var(--color-fg);
+	line-height: 1;
+}
+
+.card a > span {
+	display: block;
+	padding: 0.5rem 0.75rem;
+}
+
+/* Coupon block line */
+.coupon-no {
+	font-size: var(--type-xs);
+	border-bottom: 2px solid #111;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 /* hover and move to front */
@@ -51,3 +67,18 @@ h1 {
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+@media (width >= 40rem) {
+	.card-2 { grid-column: 2 / 4; }
+	.card-3 { grid-column: 4 / 7; }
+
+	.card {
+		width: clamp(12rem, 22vw, 18rem);
+		aspect-ratio: 2 / 3;
+	}
+
+	.card a {
+		font-size: var(--type-md);
+		padding: var(--type-md);
+		line-height: var(--lineheight-sm);
+	}
+}

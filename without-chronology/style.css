@@ -1,2 +1,22 @@
 
+:root{
+	--color-bg: #FF884B;
+	--color-fg: #103091;
+	--color-accent: #174cb5;
+	--color-quote-bg: #a7cf6a;
+}
 
+.menu .current {
+	position: relative;
+}
+
+.menu .current::after {
+	content: "";
+	position: absolute;
+	inset-block-start: -0.7em;
+	inset-inline-end: -0.7em;
+	inline-size: 1.4em;
+	block-size: 1.4em;
+	border-block-end: var(--line-thin) solid;
+	rotate: 45deg;
+}
