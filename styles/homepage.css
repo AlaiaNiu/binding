@@ -1,6 +1,5 @@
 header{
 	font-family: var(--font-head);
-	padding-inline: 0;
 }
 
 h1 {
@@ -13,12 +12,13 @@ nav{
 
 .subtitle{
 	color: var(--color-accent);
+	line-height: var(--lineheight-sm);
 }
 
 /* homepage nav style*/
 .cards {
 	padding: var(--space-md);
-	background-color: #54659C;
+	background-color: #707996;
 
 	display: grid;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -80,5 +80,6 @@ nav{
 		font-size: var(--type-md);
 		padding: var(--type-md);
 		line-height: var(--lineheight-sm);
+		text-decoration: none;
 	}
 }
