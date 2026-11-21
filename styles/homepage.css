@@ -1,5 +1,6 @@
 header{
 	font-family: var(--font-head);
+	text-align: center;
 }
 
 h1 {
@@ -17,7 +18,7 @@ nav{
 
 /* homepage nav style*/
 .cards {
-	padding: var(--space-md);
+	padding: var(--space-sm);
 	background-color: #707996;
 
 	display: grid;
@@ -67,18 +68,25 @@ nav{
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (width >= 40rem) {
-	.card-2 { grid-column: 2 / 4; }
-	.card-3 { grid-column: 4 / 7; }
-
-	.card {
-		width: clamp(12rem, 22vw, 18rem);
-		aspect-ratio: 2 / 3;
+@media (width >= 60rem) {
+	/* 12 grid for better use of space */
+	.cards {
+		padding: var(--space-md);
+		grid-template-columns: repeat(12, minmax(0, 1fr));
 	}
+	
+	/* card height */
+	.card {
+		aspect-ratio: 5/ 6;
+	}
+
+	/* card placement */
+	.card-1 { grid-column: 1 / 5;  grid-row: 1; }
+	.card-2 { grid-column: 4 / 9;  grid-row: 1; margin-block-start: 4rem; }
+	.card-3 { grid-column: 8 / 13; grid-row: 1; margin-block-start: 1.5rem; }
 
 	.card a {
 		font-size: var(--type-md);
-		padding: var(--type-md);
 		line-height: var(--lineheight-sm);
 		text-decoration: none;
 	}

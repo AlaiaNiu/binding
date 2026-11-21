@@ -5,7 +5,24 @@
 	--color-quote-bg: #a7cf6a;
 }
 
+
+
 .menu .current {
-	text-decoration: line-through;
-	text-decoration-thickness: 0.15em;
+	position: relative;
+	overflow: hidden;
+}
+
+.menu .current::after {
+	content: "";
+	position: absolute;
+	inset-inline: -25%;
+	inset-block-start: 50%;
+	border-block-start: var(--line-thin) solid;
+	rotate: 45deg;
+}
+
+@media (width >= 60rem) {
+	.menu .current::after {
+	rotate: 12deg;
+	}
 }

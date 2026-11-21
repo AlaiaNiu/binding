@@ -110,6 +110,7 @@ h2 {
 	color: var(--color-bg);
 	padding-block: var(--space-sm) var(--space-md);
 	padding-inline: var(--space-sm);
+
 }
 
 .byline {
@@ -141,6 +142,15 @@ em {
 /* nav */
 /* back to home */
 .menu {
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 1;
+	background-color: var(--color-bg);
+	/* cover the pull quote */
+	outline: var(--space-xs) solid var(--color-bg);
+	padding-block: var(--space-sm);
+	/* underline */
+	border-block-end: var(--line-thin) dashed;
 
 	display: grid;
 	grid-template-columns: auto 1fr;
@@ -186,11 +196,6 @@ em {
 /* after being used（clicking nav）change to soild color */
 .menu .current {
 	border-style: solid;
-}
-
-blockquote {
-	margin-block: var(--space-md);
-	padding: var(--space-sm);
 }
 
 .pull-quote {

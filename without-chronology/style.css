@@ -1,21 +1,28 @@
-:root{
+
+:root {
 	--color-bg: #ffe3d6;
 	--color-fg: #54659C;
 	--color-accent: #174cb5;
 	--color-quote-bg: #a7cf6a;
+
+	--corner-cut: 1.5rem;
 }
 
-.menu .current {
+.menu .current,
+.pull-quote {
 	position: relative;
+	clip-path: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, 0 100%);
 }
 
-.menu .current::after {
+.menu .current::after,
+.pull-quote::after {
 	content: "";
 	position: absolute;
-	inset-block-start: -0.7em;
-	inset-inline-end: -0.7em;
-	inline-size: 1.4em;
-	block-size: 1.4em;
+	/* massured by eyes, not magic number, visual alignemnts */
+	inset-block-start: calc(var(--corner-cut) * -0.73);
+	inset-inline-end: calc(var(--corner-cut) * -0.73);
+	inline-size: calc(var(--corner-cut) * 1.4);
+	block-size: calc(var(--corner-cut) * 1.4);
 	border-block-end: var(--line-thin) solid;
 	rotate: 45deg;
 }

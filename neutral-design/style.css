@@ -1,13 +1,20 @@
-、
 :root{
-	--color-bg: #FF8144;
-	--color-fg: #28768D;
+	--color-bg: #fac273;
+	--color-fg: #1b3037;
 	--color-accent: #174cb5;
 	--color-quote-bg: #a7cf6a;
 }
 
 
+/* pilling */
 .menu .current {
-	border-bottom: var(--line-thin) dotted;
+	background-color: var(--color-fg);
+	/* 3 edge color need to fit the color of the nav when clicked*/
+	border-color: var(--color-fg);
+	color: var(--color-bg);
+	/* adjusting the size of the taring edges */
+	border-block-end: 0.25em dashed var(--color-bg);
+	border-inline-width: 0;
+	
 }
 
