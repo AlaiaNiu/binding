@@ -31,6 +31,24 @@ nav{
 .card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; }
 .card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #F6EED4; --rotate: -1deg;}
 
+/* scrolling driven animaiton */
+@keyframes ticket-grow {
+	0%  { scale: 80%; }
+	40%  { scale: 100%; }
+	60%  { scale: 100%; }
+	100% { scale: 40%; }
+}
+
+.card {
+	@supports (animation-range: cover) {
+		@media (prefers-reduced-motion: no-preference) {
+			animation-name: ticket-grow;
+			animation-timeline: view();
+			animation-timing-function: ease-in-out;
+		}
+	}
+}
+
 /* motion */
 .card{
 	transition: all 0.4s ease;
@@ -46,6 +64,7 @@ nav{
 	color:#351a1a;
 	border: var(--line-thin) solid var(--color-fg);
 	line-height: 1;
+	text-decoration: none;
 }
 
 .card a > span {
@@ -68,13 +87,14 @@ nav{
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+
 @media (width >= 60rem) {
 	/* 12 grid for better use of space */
 	.cards {
 		padding: var(--space-md);
 		grid-template-columns: repeat(12, minmax(0, 1fr));
 	}
-	
+
 	/* card height */
 	.card {
 		aspect-ratio: 5/ 6;
