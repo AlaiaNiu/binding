@@ -1,4 +1,4 @@
-header{
+header {
 	font-family: var(--font-head);
 	text-align: center;
 }
@@ -7,11 +7,7 @@ h1 {
 	font-size: var(--type-xl);
 }
 
-nav{
-	font-size: var(--type-sm);
-}
-
-.subtitle{
+.subtitle {
 	color: var(--color-accent);
 	line-height: var(--lineheight-sm);
 }
@@ -24,22 +20,29 @@ nav{
 	display: grid;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
 	align-items: start;
-	gap: 1rem;
+	gap: var(--space-sm);
 }
 
 .card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #F6EED4; --rotate: -2deg; }
 .card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; }
 .card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #F6EED4; --rotate: -1deg;}
 
-/* scrolling driven animaiton */
+/* scrolling driven animation */
 @keyframes ticket-grow {
-	0%  { scale: 80%; }
+	0%  { scale: 90%; }
 	40%  { scale: 100%; }
 	60%  { scale: 100%; }
-	100% { scale: 40%; }
+	100% { scale: 90%; }
 }
 
 .card {
+	/* motion on website */
+	transition: all 0.4s ease;
+	transform: rotate(var(--rotate));
+	aspect-ratio: 2 / 3;
+	padding: var(--space-xs);
+
+	/* animation for mobile */
 	@supports (animation-range: cover) {
 		@media (prefers-reduced-motion: no-preference) {
 			animation-name: ticket-grow;
@@ -49,19 +52,11 @@ nav{
 	}
 }
 
-/* motion */
-.card{
-	transition: all 0.4s ease;
-	transform: rotate(var(--rotate));
-	aspect-ratio: 2 / 3;
-	padding: var(--space-xs);
-}
-
 .card a {
 	font-size: var(--type-sm);
 	display: block;
-	height: 100%;
-	color:#351a1a;
+	block-size: 100%;
+	color:var(--color-fg);
 	border: var(--line-thin) solid var(--color-fg);
 	line-height: 1;
 	text-decoration: none;
@@ -69,30 +64,31 @@ nav{
 
 .card a > span {
 	display: block;
-	padding: 0.5rem 0.75rem;
+	padding: var(--space-xs);
 }
 
 /* Coupon block line */
 .coupon-no {
 	font-size: var(--type-xs);
-	border-bottom: 2px solid #111;
+	border-block-end: var(--line-thin) solid #351a1a;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 /* hover and move to front */
-.card:hover, .card.clicked {
-	transform: scale(1.1) rotate(2deg) translateY(0);
+.card:hover {
+	transform: scale(1.1) rotate(2deg);
 	z-index: 5;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 @media (width >= 60rem) {
 	/* 12 grid for better use of space */
 	.cards {
 		padding: var(--space-md);
 		grid-template-columns: repeat(12, minmax(0, 1fr));
+		max-inline-size: 60rem;
+		margin-inline: auto;
 	}
 
 	/* card height */
@@ -108,6 +104,5 @@ nav{
 	.card a {
 		font-size: var(--type-md);
 		line-height: var(--lineheight-sm);
-		text-decoration: none;
 	}
 }

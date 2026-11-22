@@ -62,6 +62,11 @@ a {
 	text-decoration: underline;
 }
 
+:focus-visible {
+	outline: var(--line-thin) solid var(--color-focus);
+	outline-offset: 0.2em;
+}
+
 p {
 	text-wrap: pretty;
 }
@@ -71,6 +76,19 @@ em {
 	font-weight: 500;
 }
 
+/* headings */
+h1, h2 {
+	font-family: var(--font-head);
+	font-weight: 700;
+	line-height: var(--lineheight-sm);
+	text-wrap: balance;
+	font-size: var(--type-md);
+}
+
+h2 {
+	display: flex;
+	column-gap: var(--space-sm);
+}
 /* nav */
 /* back to home */
 .menu {
@@ -99,7 +117,7 @@ em {
 	font-size: var(--type-sm);
 }
 
-.menu a{
+.menu a {
 	text-decoration: none;
 }
 
@@ -130,23 +148,11 @@ em {
 	border-style: solid;
 }
 
-:focus-visible {
-	outline: var(--line-thin) solid var(--color-focus);
-	outline-offset: 0.2em;
-}
-
-/* headings */
-h1, h2 {
-	font-family: var(--font-head);
-	font-weight: 700;
-	line-height: var(--lineheight-sm);
-	text-wrap: balance;
-	font-size: var(--type-md);
-}
-
-h2 {
-	display: flex;
-	column-gap: var(--space-sm);
+.article-header {
+	background-color: var(--color-fg);
+	color: var(--color-bg);
+	padding-block: var(--space-sm);
+	padding-inline: var(--space-sm);
 }
 
 .article-title {
@@ -159,13 +165,6 @@ h2 {
 	font-size: var(--type-sm);
 	line-height: var(--lineheight-md);
 	margin-block: var(--space-sm);
-}
-
-.article-header {
-	background-color: var(--color-fg);
-	color: var(--color-bg);
-	padding-block: var(--space-sm);
-	padding-inline: var(--space-sm);
 }
 
 .byline {
@@ -204,7 +203,6 @@ footer {
 	padding-block: var(--space-sm);
 }
 
-
 @media (width >= 60rem) {
 
 	h1 {
@@ -229,6 +227,10 @@ footer {
 		border-inline-start: var(--line-thin) dashed;
 	}
 
+	section > * {
+		grid-column: 2;
+	}
+
 	section > h2 {
 		grid-column: 1;
 		grid-row: 1 / span 20;
@@ -236,10 +238,6 @@ footer {
 		inset-block-start: calc(var(--space-lg) * 2);
 		flex-direction: column;
 
-	}
-
-	section > * {
-		grid-column: 2;
 	}
 
 	section > h2 .section-number {
@@ -253,13 +251,11 @@ footer {
 	}
 }
 
-
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-bg: black;
 		--color-fg: #f0dde6;
 		--color-accent: #f07a5c;
-		--color-muted: rgb(240 221 230 / 50%);
 	}
 }
 
