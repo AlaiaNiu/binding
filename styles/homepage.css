@@ -15,7 +15,7 @@ h1 {
 /* homepage nav style*/
 .cards {
 	padding: var(--space-sm);
-	background-color: #707996;
+	background-color: #e1decd;
 
 	display: grid;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -23,9 +23,9 @@ h1 {
 	gap: var(--space-sm);
 }
 
-.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #F6EED4; --rotate: -2deg; }
-.card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; }
-.card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #F6EED4; --rotate: -1deg;}
+.card-1 { grid-column: 3 / 7; grid-row: 1 / 4; background-color: #F6EED4; --rotate: -2deg; --numeral: #e39962; }
+.card-2 { grid-column: 1 / 5; grid-row: 3 / 6; background-color: #FAF7E4; --rotate: 2deg; --numeral: #989fb8;}
+.card-3 { grid-column: 3 / 7; grid-row: 5 / 7; background-color: #F6EED4; --rotate: -1deg; --numeral: #86b09d;}
 
 /* scrolling driven animation */
 @keyframes ticket-grow {
@@ -42,7 +42,7 @@ h1 {
 	aspect-ratio: 2 / 3;
 	padding: var(--space-xs);
 
-	/* animation for mobile */
+	/* scrolling animation for mobile zoom in and out a little*/
 	@supports (animation-range: cover) {
 		@media (prefers-reduced-motion: no-preference) {
 			animation-name: ticket-grow;
@@ -55,9 +55,20 @@ h1 {
 .card a {
 	font-size: var(--type-sm);
 	display: block;
-	block-size: 100%;
+	min-block-size: 100%;
 	color:var(--color-fg);
 	border: var(--line-thin) solid var(--color-fg);
+	line-height: 1;
+	text-decoration: none;
+}
+
+.card a {
+	font-size: var(--type-sm);
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	color: #1c1e1c;
+	border: var(--line-thin) solid;
 	line-height: 1;
 	text-decoration: none;
 }
@@ -68,11 +79,38 @@ h1 {
 }
 
 /* Coupon block line */
-.coupon-no {
+.coupon-no,
+.coupon-dec,
+.coupon-min,
+.coupon-time {
 	font-size: var(--type-xs);
-	border-block-end: var(--line-thin) solid #351a1a;
-	text-align: center;
+	font-weight: 700;
 	text-transform: uppercase;
+}
+
+.coupon-no,
+.coupon-title {
+	border-block-end: var(--line-thin) solid;
+}
+
+.coupon-dec {
+	flex-grow: 1;
+	text-align: start;
+}
+
+.coupon-min {
+	text-align: end;
+}
+
+.coupon-min strong {
+	font-size: var(--type-lg);
+	line-height: 1;
+	color: var(--numeral);
+}
+
+.coupon-time {
+	background-color: #2a2e39;
+	color: #f6eed4;
 }
 
 /* hover and move to front */
@@ -82,8 +120,49 @@ h1 {
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* colophon ticket list style*/
+.colophon h2 {
+	margin-block-end: var(--space-xs);
+}
+
+.colophon dl {
+	border: var(--line-thin) solid var(--color-fg);
+}
+
+.colophon dl > div {
+	padding: var(--space-xs);
+}
+
+.colophon dl > div + div {
+	border-block-start: 1px solid var(--color-fg);
+}
+
+.colophon dt {
+	font-family: var(--font-mono);
+	font-size: var(--type-xs);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.colophon dd {
+
+	font-family: var(--font-head);
+}
+
+.colophon-note {
+	margin-block-start: var(--space-xs);
+	font-style: italic;
+	text-transform: uppercase;
+	color: var(--color-accent);
+}
+
+.introduction,
+.colophon {
+	max-inline-size: 60rem;
+	margin-inline: auto;
+}
+
 @media (width >= 60rem) {
-	/* 12 grid for better use of space */
 	.cards {
 		padding: var(--space-md);
 		grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -96,6 +175,9 @@ h1 {
 		aspect-ratio: 5/ 6;
 	}
 
+	.card-1 { grid-column: 1 / 6; grid-row: 1; }
+	.coupon-min strong { font-size: 6rem; }
+
 	/* card placement */
 	.card-1 { grid-column: 1 / 5;  grid-row: 1; }
 	.card-2 { grid-column: 4 / 9;  grid-row: 1; margin-block-start: 4rem; }
@@ -105,4 +187,28 @@ h1 {
 		font-size: var(--type-md);
 		line-height: var(--lineheight-sm);
 	}
+
+
+	.colophon div {
+		display: grid;
+		grid-template-columns: 12rem 1fr;
+	}
+
+	.colophon dd {
+		grid-column: 2;
+	}
+
+	.introduction,
+	.colophon {
+		display: grid;
+		grid-template-columns: 20rem 40rem;
+	}
+
+	.introduction p,
+	.colophon dl,
+	.colophon-note {
+		grid-column: 2;
+	}
+
+
 }

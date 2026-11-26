@@ -1,7 +1,7 @@
 :root{
-	--color-bg: #fac273;
+	--color-bg: #BCC6D0;
 	--color-fg: #1b3037;
-	--color-accent: #174cb5;
+	--color-accent: #71383E;
 	--color-quote-bg: #a7cf6a;
 }
 
@@ -15,6 +15,6 @@
 	/* adjusting the size of the taring edges */
 	border-block-end: 0.25em dashed var(--color-bg);
 	border-inline-width: 0;
-	
+
 }
 
