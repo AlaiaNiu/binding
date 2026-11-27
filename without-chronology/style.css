@@ -7,8 +7,7 @@
 	--corner-cut: 1.5rem;
 }
 
-.menu .current,
-.pull-quote {
+.menu .current{
 	position: relative;
 	clip-path: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, 0 100%);
 }

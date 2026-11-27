@@ -185,6 +185,10 @@ section {
 	> * + * {
 		margin-block-start: var(--space-sm);
 	}
+
+	.section-title {
+		color: var(--color-fg);
+	}
 }
 
 /* tear line between sections */
@@ -197,6 +201,7 @@ section + section {
 	max-inline-size: min(30rem, 100% - 2 * var(--space-xs));
 	margin: var(--space-lg) auto;
 	border: var(--line-thin) solid var(--color-fg);
+	/* adding a little background color for the quote */
 	outline: var(--space-xs) solid color-mix(in srgb, var(--color-fg) 25%, var(--color-cards));
 	background-color: var(--color-cards);
 
@@ -256,7 +261,7 @@ footer {
 	.article section::before {
 		content: '';
 		position: absolute;
-		inset-block: 0;
+		inset-block: var(--space-lg);
 		inset-inline-start: 25%;
 		border-inline-start: var(--line-thin) dashed;
 	}
