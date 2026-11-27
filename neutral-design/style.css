@@ -1,8 +1,8 @@
 :root{
-	--color-bg: #BCC6D0;
-	--color-fg: #1b3037;
+	--color-bg: #F6EED4;
+	--color-fg: #5b9d85;
 	--color-accent: #71383E;
-	--color-quote-bg: #a7cf6a;
+
 }
 
 
@@ -18,3 +18,13 @@
 
 }
 
+.pull-quote::after {
+	font-size: var(--text-md);
+	content: "03";
+}
+
+.pull-quote::after {
+	content: "";
+	background-color: var(--color-fg);
+	border-block-start: var(--line-thin) dashed var(--color-cards);
+}

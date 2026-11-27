@@ -1,9 +1,8 @@
 
 :root {
-	--color-bg: #ffe3d6;
-	--color-fg: #54659C;
+	--color-bg: #F6EED4;
+	--color-fg: #e39962;
 	--color-accent: #174cb5;
-	--color-quote-bg: #a7cf6a;
 
 	--corner-cut: 1.5rem;
 }
@@ -14,8 +13,7 @@
 	clip-path: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, 0 100%);
 }
 
-.menu .current::after,
-.pull-quote::after {
+.menu .current::after {
 	content: "";
 	position: absolute;
 	/* massured by eyes, not magic number, visual alignemnts */
