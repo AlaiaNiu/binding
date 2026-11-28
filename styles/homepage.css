@@ -12,7 +12,7 @@ h1 {
 	line-height: var(--lineheight-sm);
 }
 
-/* homepage nav style*/
+/* homepage nav card style for all three*/
 .cards {
 	padding: var(--space-sm);
 	background-color: #3c3b4b;
@@ -24,9 +24,10 @@ h1 {
 	gap: var(--space-sm);
 }
 
-.card-1 { grid-column: 3 / 7; grid-row: 1; background-color: #F6EED4; --rotate: -2deg; --numeral: #e39962; }
-.card-2 { grid-column: 1 / 5; grid-row: 2; margin-block-start: -2.8rem; background-color: #FAF7E4; --rotate: 2deg; --numeral: rgb(from #989fb8 r g b /60%); }
-.card-3 { grid-column: 3 / 7; grid-row: 3; margin-block-start: -2.8rem; background-color: #F6EED4; --rotate: -1deg; --numeral:rgb(from #5b9d85 r g b / 60%); }
+/* placement for the cards，margin block start measured by eyes */
+.card-1 { grid-column: 3 / 7; grid-row: 1; background-color: #ecedf3; --rotate: -2deg; --number: #e39962; }
+.card-2 { grid-column: 1 / 5; grid-row: 2; margin-block-start: -2.8rem; background-color: #eef4e9; --rotate: 2deg; --number: rgb(from #989fb8 r g b /60%); }
+.card-3 { grid-column: 3 / 7; grid-row: 3; margin-block-start: -2.8rem; background-color: #ebe6d6; --rotate: -1deg; --number:rgb(from #5b9d85 r g b / 60%); }
 
 /* scrolling driven animation */
 @keyframes ticket-grow {
@@ -83,6 +84,9 @@ h1 {
 	border-block-end: var(--line-thin) solid;
 }
 
+.coupon-no{
+	font-weight: 700;
+}
 
 .coupon-min {
 	display: flex;
@@ -96,7 +100,12 @@ h1 {
 	font-size: var(--type-xl);
 	line-height: 1;
 	margin-inline-start: auto;
-	color: var(--numeral);
+	color: var(--number);
+}
+
+/* keep the label on one line */
+.coupon-min .coupon-label {
+	white-space: nowrap;
 }
 
 .coupon-time {
@@ -170,7 +179,6 @@ h1 {
 		animation: none;
 	}
 
-	.card-1 { grid-column: 1 / 6; grid-row: 1; }
 	.coupon-min strong { font-size: 8rem; }
 
 	/* card placement */
@@ -182,7 +190,6 @@ h1 {
 		font-size: var(--type-md);
 		line-height: var(--lineheight-sm);
 	}
-
 
 	.colophon div {
 		display: grid;
